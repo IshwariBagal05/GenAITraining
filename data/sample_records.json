@@ -1,0 +1,21 @@
+
+[
+  {
+    "id": 1,
+    "topic": "Free-Look Period",
+    "insurance_type": "Life",
+    "rule_summary": "The policyholder gets a period to review the policy terms and conditions and may cancel if not satisfied, subject to applicable deductions.",
+    "time_limit": "30 days from receipt of policy document",
+    "who_to_contact": "Insurance company",
+    "source_url": "https://irdai.gov.in/"
+  },
+  {
+    "id": 2,
+    "topic": "Bima Bharosa - Complaint Channels",
+    "insurance_type": "All",
+    "rule_summary": "Policyholders can register complaints with the insurer and escalate unresolved grievances through IRDAI Bima Bharosa.",
+    "time_limit": "15 days for the insurer grievance response as described in the grievance process",
+    "who_to_contact": "Insurer GRO, IRDAI Bima Bharosa, or Insurance Ombudsman as applicable",
+    "source_url": "https://bimabharosa.irdai.gov.in/Home/CallCenter"
+  }
+]
