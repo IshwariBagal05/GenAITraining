@@ -4,7 +4,7 @@
 ## Product
 InsureClear is an insurance information assistant that helps users understand insurance policies in simple language.
 
-## Target User
+## User
 People who want to understand insurance policies, benefits, premiums, and claims.
 
 ## Problem
