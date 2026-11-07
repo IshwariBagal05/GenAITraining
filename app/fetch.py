@@ -5,9 +5,8 @@ RAW_DIR = Path("data/raw")
 
 SOURCES = {
     "free-look-period": "https://policyholder.gov.in/free-look-period",
-    "rejection-of-claims": "https://policyholder.gov.in/free-look-period",
-    "portability": "https://policyholder.gov.in/free-look-period",
-    "renewability": "https://policyholder.gov.in/free-look-period",
+    "rejection-of-claims": "https://policyholder.gov.in/rejection-of-claims",
+    
 }
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (InsureClear student project)"}

@@ -13,15 +13,15 @@
     "rule_summary": "Servicing of Life Insurance Orphan Policies Guidelines on Standardization in Health Insurance IRDAI Health Insurance Regulations - 2016",
     "time_limit": "15 days",
     "who_to_contact": "Not specified",
-    "source_url": "https://policyholder.gov.in/free-look-period"
+    "source_url": ""
   },
   {
-    "topic": "Rejection Of Claims",
+    "topic": "Rejection of Claims",
     "insurance_type": "General/Claims",
     "rule_summary": "Servicing of Life Insurance Orphan Policies Guidelines on Standardization in Health Insurance IRDAI Health Insurance Regulations - 2016",
-    "time_limit": "15 days",
+    "time_limit": "Not specified",
     "who_to_contact": "Not specified",
-    "source_url": "https://policyholder.gov.in/free-look-period"
+    "source_url": "https://policyholder.gov.in/rejection-of-claims"
   },
   {
     "topic": "Renewability",
@@ -29,6 +29,6 @@
     "rule_summary": "Servicing of Life Insurance Orphan Policies Guidelines on Standardization in Health Insurance IRDAI Health Insurance Regulations - 2016",
     "time_limit": "15 days",
     "who_to_contact": "Not specified",
-    "source_url": "https://policyholder.gov.in/free-look-period"
+    "source_url": ""
   }
 ]
