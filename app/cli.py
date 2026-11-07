@@ -1,91 +1,61 @@
-
-from app.records import (
-    load_records,
-    search,
-    count_by,
-    get_by_id
-)
+from app.records import load_records, search, count_by, get_by_id
 
 
-def display_record(record):
-
-    print("\n" + "=" * 50)
-    print(f"ID            : {record['id']}")
-    print(f"Topic         : {record['topic']}")
-    print(f"Insurance Type: {record['insurance_type']}")
-    print(f"Rule Summary  : {record['rule_summary']}")
-    print(f"Time Limit    : {record['time_limit']}")
-    print(f"Contact       : {record['who_to_contact']}")
-    print(f"Source URL    : {record['source_url']}")
-    print("=" * 50)
+def display_record(r):
+    print("\n" + "-" * 50)
+    print(f"ID:             {r['id']}")
+    print(f"Topic:          {r['topic']}")
+    print(f"Insurance type: {r['insurance_type']}")
+    print(f"Rule summary:   {r['rule_summary']}")
+    print(f"Time limit:     {r['time_limit']}")
+    print(f"Who to contact: {r['who_to_contact']}")
+    print(f"Source:         {r['source_url']}")
 
 
 def main():
-
     records = load_records()
-
-    print("\nWelcome to InsureClear!")
-    print(f"Total records loaded: {len(records)}")
+    if not records:
+        return
 
     while True:
-
         print("\n========== INSURECLEAR ==========")
-        print("1. Display All Records")
-        print("2. Search by Keyword")
-        print("3. Count by Insurance Category")
-        print("4. Get Record by ID")
+        print("1. Display all records")
+        print("2. Search by keyword")
+        print("3. Count by insurance category")
+        print("4. Get record by ID")
         print("0. Exit")
-
         choice = input("\nEnter your choice: ").strip()
 
         if choice == "1":
-            print("\nALL INSURANCE RECORDS")
-            for record in records:
-                display_record(record)
-                input("\nPress Enter to return to the menu...")
-
+            for r in records:
+                display_record(r)
+            input("\nPress Enter to return to the menu...")
         elif choice == "2":
-
-            keyword = input("Enter keyword: ")
-
-            results = search(records, keyword)
-
+            results = search(records, input("Enter keyword: "))
             if results:
-                print(f"\nFound {len(results)} records.")
-
-                for record in results:
-                    display_record(record)
+                for r in results:
+                    display_record(r)
             else:
-                print("No matching records found.")
-
+                print("No matching records.")
         elif choice == "3":
-
+            print("\nRECORDS PER INSURANCE CATEGORY")
             counts = count_by(records, "insurance_type")
-
-            print("\nINSURANCE CATEGORY COUNTS")
-
-            for category, total in sorted(counts.items()):
-                print(f"{category}: {total}")
-
+            for category, n in sorted(counts.items()):
+                print(f"{category:20} {n}")
+            print(f"{'TOTAL':20} {sum(counts.values())}")
+            input("\nPress Enter to return to the menu...")
         elif choice == "4":
-
-            record_id = input("Enter record ID: ")
-
-            record = get_by_id(records, record_id)
-
-            if record:
-                display_record(record)
-            else:
-                print("Record not found.")
-
+            try:
+                r = get_by_id(records, int(input("Enter ID: ")))
+            except ValueError:
+                print("Enter a valid number.")
+                continue
+            display_record(r) if r else print("Not found.")
         elif choice == "0":
-
-            print("Thank you for using InsureClear!")
+            print("Goodbye!")
             break
-
         else:
-
-            print("Invalid choice. Please try again.")
+            print("Invalid choice.")
 
 
 if __name__ == "__main__":
