@@ -1,21 +1,164 @@
-
 [
   {
     "id": 1,
     "topic": "Free-Look Period",
-    "insurance_type": "Life",
-    "rule_summary": "The policyholder gets a period to review the policy terms and conditions and may cancel if not satisfied, subject to applicable deductions.",
-    "time_limit": "30 days from receipt of policy document",
-    "who_to_contact": "Insurance company",
-    "source_url": "https://irdai.gov.in/"
+    "insurance_type": "All",
+    "rule_summary": "After receiving a new policy you can review it and return it if you disagree with the terms. The insurer refunds the premium after deducting proportionate risk cost, medical exam cost and stamp duty.",
+    "time_limit": "15 days (30 days if sold through distance marketing or electronically)",
+    "who_to_contact": "The insurer that issued the policy",
+    "source_url": "https://policyholder.gov.in/free-look-period"
   },
   {
     "id": 2,
-    "topic": "Bima Bharosa - Complaint Channels",
+    "topic": "Insurance Repository System",
+    "insurance_type": "Life",
+    "rule_summary": "An insurance repository keeps your policies in electronic form in one e-insurance account, so you can view and manage them without paper copies.",
+    "time_limit": "Not specified",
+    "who_to_contact": "The insurance repository or your insurer",
+    "source_url": "https://policyholder.gov.in"
+  },
+  {
+    "id": 3,
+    "topic": "Renewability",
+    "insurance_type": "Health",
+    "rule_summary": "A health policy should be renewable, and an insurer cannot refuse renewal on grounds such as past claims. Renewal can be refused only in cases like fraud or misrepresentation.",
+    "time_limit": "Grace period of about 30 days after the due date",
+    "who_to_contact": "The insurer",
+    "source_url": "https://policyholder.gov.in"
+  },
+  {
+    "id": 4,
+    "topic": "Portability",
+    "insurance_type": "Health",
+    "rule_summary": "You can move your health policy to another insurer at renewal and keep credit for waiting periods already served. You apply to the new insurer, which gets your records from the old one.",
+    "time_limit": "Apply 45 to 60 days before the renewal date",
+    "who_to_contact": "The new insurer you want to move to",
+    "source_url": "https://policyholder.gov.in"
+  },
+  {
+    "id": 5,
+    "topic": "Group Insurance",
     "insurance_type": "All",
-    "rule_summary": "Policyholders can register complaints with the insurer and escalate unresolved grievances through IRDAI Bima Bharosa.",
-    "time_limit": "15 days for the insurer grievance response as described in the grievance process",
-    "who_to_contact": "Insurer GRO, IRDAI Bima Bharosa, or Insurance Ombudsman as applicable",
-    "source_url": "https://bimabharosa.irdai.gov.in/Home/CallCenter"
+    "rule_summary": "A group policy covers members of a group, such as employees, under one master policy. Members are covered by the group's terms and usually cannot change them individually.",
+    "time_limit": "Not specified",
+    "who_to_contact": "The group policyholder (employer or society) and the insurer",
+    "source_url": "https://policyholder.gov.in"
+  },
+  {
+    "id": 6,
+    "topic": "ULIPs",
+    "insurance_type": "Life",
+    "rule_summary": "A Unit Linked Insurance Plan combines life cover with market-linked investment. Charges are deducted from the premium, and the fund value depends on market performance.",
+    "time_limit": "Lock-in of 5 years",
+    "who_to_contact": "The insurer",
+    "source_url": "https://policyholder.gov.in"
+  },
+  {
+    "id": 7,
+    "topic": "Distance Marketing",
+    "insurance_type": "All",
+    "rule_summary": "Insurance sold by phone, post, email or the internet without a face-to-face meeting has extra protections. You get a longer window to review and return the policy.",
+    "time_limit": "30 days free-look",
+    "who_to_contact": "The insurer",
+    "source_url": "https://policyholder.gov.in"
+  },
+  {
+    "id": 8,
+    "topic": "Rejection of Claims",
+    "insurance_type": "All",
+    "rule_summary": "If an insurer rejects a claim it must give the reasons in writing. Late intimation alone is not always a valid ground, and you can challenge a rejection through the insurer's grievance process and then the Ombudsman.",
+    "time_limit": "Complaint to insurer first; Ombudsman within 1 year of the insurer's reply",
+    "who_to_contact": "Insurer's grievance officer, then Insurance Ombudsman or Bima Bharosa",
+    "source_url": "https://policyholder.gov.in/rejection-of-claims"
+  },
+  {
+    "id": 9,
+    "topic": "e-Insurance Policies",
+    "insurance_type": "All",
+    "rule_summary": "A policy held in electronic form has the same legal value as a paper policy. You can buy, store and service it online and keep it in an e-insurance account.",
+    "time_limit": "Not specified",
+    "who_to_contact": "The insurer or your e-insurance account provider",
+    "source_url": "https://policyholder.gov.in"
+  },
+  {
+    "id": 10,
+    "topic": "Motor Partial Loss Claims",
+    "insurance_type": "Motor",
+    "rule_summary": "For damage that is repairable, the insurer appoints a surveyor to assess the loss and pays for the repair, usually directly to a network garage or to you. Depreciation and the policy excess may be deducted.",
+    "time_limit": "Report the loss to the insurer as soon as possible",
+    "who_to_contact": "The motor insurer's claims desk and the appointed surveyor",
+    "source_url": "https://policyholder.gov.in"
+  },
+  {
+    "id": 11,
+    "topic": "Standardization in Health Insurance",
+    "insurance_type": "Health",
+    "rule_summary": "Common definitions and standard terms are used across health policies so that terms such as pre-existing disease and exclusions mean the same thing for every insurer. This makes policies easier to compare.",
+    "time_limit": "Not specified",
+    "who_to_contact": "The insurer",
+    "source_url": "https://policyholder.gov.in"
+  },
+  {
+    "id": 12,
+    "topic": "Moratorium Period in Health Insurance",
+    "insurance_type": "Health",
+    "rule_summary": "After a set number of years of continuous cover, the insurer cannot reject a claim on the ground of non-disclosure or pre-existing disease, except for proven fraud.",
+    "time_limit": "5 years of continuous cover",
+    "who_to_contact": "The insurer",
+    "source_url": "https://policyholder.gov.in"
+  },
+  {
+    "id": 13,
+    "topic": "Grace Period and Revival of Lapsed Policies",
+    "insurance_type": "Life",
+    "rule_summary": "If you miss a premium you get a grace period during which the policy stays in force. A policy that has lapsed can be revived by paying dues and meeting the insurer's conditions.",
+    "time_limit": "30 days grace (15 days for monthly mode); revival within 5 years",
+    "who_to_contact": "The insurer",
+    "source_url": "https://policyholder.gov.in"
+  },
+  {
+    "id": 14,
+    "topic": "Cashless Claims in Health Insurance",
+    "insurance_type": "Health",
+    "rule_summary": "At a network hospital the insurer settles the bill directly, and you pay only non-covered items. You request pre-authorisation, and the insurer must decide within a short fixed time.",
+    "time_limit": "Authorisation decision within 1 hour; discharge approval within 3 hours",
+    "who_to_contact": "The insurer or TPA helpdesk and the hospital's insurance desk",
+    "source_url": "https://policyholder.gov.in"
+  },
+  {
+    "id": 15,
+    "topic": "Grievance Redressal by the Insurer",
+    "insurance_type": "All",
+    "rule_summary": "Every insurer must have a grievance redressal process. You complain to the insurer first, and if you get no reply or are not satisfied you escalate to IRDAI or the Ombudsman.",
+    "time_limit": "Escalate if there is no satisfactory reply within about 15 days",
+    "who_to_contact": "Insurer's grievance officer, then IRDAI Bima Bharosa",
+    "source_url": "https://policyholder.gov.in"
+  },
+  {
+    "id": 16,
+    "topic": "Insurance Ombudsman",
+    "insurance_type": "All",
+    "rule_summary": "The Insurance Ombudsman resolves complaints against insurers for free, but only after you have first complained to the insurer. It covers disputes such as claim rejection and delay within a set claim value.",
+    "time_limit": "File within 1 year of the insurer's final reply",
+    "who_to_contact": "The Insurance Ombudsman office for your area",
+    "source_url": "https://policyholder.gov.in"
+  },
+  {
+    "id": 17,
+    "topic": "Nomination in Life Insurance",
+    "insurance_type": "Life",
+    "rule_summary": "The policyholder names a nominee who receives the policy money if the policyholder dies. A nomination can be made or changed during the life of the policy by informing the insurer.",
+    "time_limit": "Not specified",
+    "who_to_contact": "The insurer",
+    "source_url": "https://policyholder.gov.in"
+  },
+  {
+    "id": 18,
+    "topic": "Bima Bharosa Complaint Channels",
+    "insurance_type": "All",
+    "rule_summary": "Bima Bharosa is IRDAI's system for registering and tracking insurance complaints online, by email or by phone. You use it after the insurer has failed to resolve your complaint.",
+    "time_limit": "Use after the insurer's grievance process has not resolved the issue",
+    "who_to_contact": "IRDAI Bima Bharosa portal, email complaints@irdai.gov.in, or toll-free 155255 / 1800 4254 732",
+    "source_url": "https://policyholder.gov.in"
   }
 ]
