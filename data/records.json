@@ -2,7 +2,7 @@
   {
     "topic": "Free Look Period",
     "insurance_type": "Life/Health",
-    "rule_summary": "Servicing of Life Insurance Orphan Policies Guidelines on Standardization in Health Insurance IRDAI Health Insurance Regulations - 2016",
+    "rule_summary": "1 Free Look Period is available for all Life Insurance policies. For Health policies a term of at least three years is a must. The free look period shall be applicable at the inception of the policy and; 2 The insured will be allowed a period of at least 15 days (30 days in case of electronic policies and policies sourced through distance mode) from the date of receipt of the policy to review the terms and conditions of the policy and to return the same if not acceptable. 3 If the insured has no",
     "time_limit": "15 days",
     "who_to_contact": "Not specified",
     "source_url": "https://policyholder.gov.in/free-look-period"
@@ -10,15 +10,15 @@
   {
     "topic": "Portability",
     "insurance_type": "Health",
-    "rule_summary": "Servicing of Life Insurance Orphan Policies Guidelines on Standardization in Health Insurance IRDAI Health Insurance Regulations - 2016",
+    "rule_summary": "1 Free Look Period is available for all Life Insurance policies. For Health policies a term of at least three years is a must. The free look period shall be applicable at the inception of the policy and; 2 The insured will be allowed a period of at least 15 days (30 days in case of electronic policies and policies sourced through distance mode) from the date of receipt of the policy to review the terms and conditions of the policy and to return the same if not acceptable. 3 If the insured has no",
     "time_limit": "15 days",
     "who_to_contact": "Not specified",
     "source_url": ""
   },
   {
-    "topic": "Rejection of Claims",
+    "topic": "Rejection Of Claims",
     "insurance_type": "General/Claims",
-    "rule_summary": "Servicing of Life Insurance Orphan Policies Guidelines on Standardization in Health Insurance IRDAI Health Insurance Regulations - 2016",
+    "rule_summary": "Individuals covered under group policies have had their claims rejected on technical grounds like slight delays in intimation of claims. IRDA has advised insurance companies that contractual conditions should not prevent them from considering genuine claims. This is especially if unavoidable circumstances prevented the consumer from following some of the policy conditions like time-frame for intimation. Download Access from Desktop Files and folders can be managed directly from the file explorer",
     "time_limit": "Not specified",
     "who_to_contact": "Not specified",
     "source_url": "https://policyholder.gov.in/rejection-of-claims"
@@ -26,9 +26,9 @@
   {
     "topic": "Renewability",
     "insurance_type": "Health",
-    "rule_summary": "Servicing of Life Insurance Orphan Policies Guidelines on Standardization in Health Insurance IRDAI Health Insurance Regulations - 2016",
-    "time_limit": "15 days",
-    "who_to_contact": "Not specified",
-    "source_url": ""
+    "rule_summary": "Yes. When you get a new policy, generally, there will be a 30 days waiting period starting from the policy inception date, during which period any hospitalization charges will not be payable by the insurance companies. However, this is not applicable to any emergency hospitalization occurring due to an accident. This waiting period will not be applicable for subsequent policies under renewal. It is a medical condition/disease that existed before you obtained health insurance policy, and it is si",
+    "time_limit": "30 days",
+    "who_to_contact": "Get the information about the buying insurance, making a claim, consumer complaints and awareness",
+    "source_url": "https://policyholder.gov.in/home"
   }
 ]
