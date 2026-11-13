@@ -1,34 +1,82 @@
 [
   {
-    "topic": "Free Look Period",
+    "topic": "Distance Marketing",
+    "insurance_type": "General",
+    "rule_summary": "Insurance policies are sold over the phone or the internet as well as through bank ATMs and so on. These other than face-to-face selling methods have their own peculiarities and drawbacks. IRDA has put out some guidelines to insurance companies in order to protect the interests of people who buy policies through such channels.",
+    "time_limit": "Not specified",
+    "who_to_contact": "Your insurer's grievance officer; IRDAI toll free 155-255",
+    "source_url": "https://policyholder.gov.in/distance-marketing"
+  },
+  {
+    "topic": "Free-Look Period",
     "insurance_type": "Life/Health",
-    "rule_summary": "1 Free Look Period is available for all Life Insurance policies. For Health policies a term of at least three years is a must. The free look period shall be applicable at the inception of the policy and; 2 The insured will be allowed a period of at least 15 days (30 days in case of electronic policies and policies sourced through distance mode) from the date of receipt of the policy to review the terms and conditions of the policy and to return the same if not acceptable. 3 If the insured has no",
+    "rule_summary": "Free Look Period is available for all Life Insurance policies. For Health policies a term of at least three years is a must. The free look period shall be applicable at the inception of the policy and; 2 The insured will be allowed a period of at least 15 days (30 days in case of electronic policies and policies sourced through distance mode) from the date of receipt of the policy to review the terms and conditions of the policy and to return the same if not acceptable.",
     "time_limit": "15 days",
-    "who_to_contact": "Not specified",
+    "who_to_contact": "Your insurer's grievance officer; IRDAI toll free 155-255",
     "source_url": "https://policyholder.gov.in/free-look-period"
   },
   {
-    "topic": "Portability",
-    "insurance_type": "Health",
-    "rule_summary": "1 Free Look Period is available for all Life Insurance policies. For Health policies a term of at least three years is a must. The free look period shall be applicable at the inception of the policy and; 2 The insured will be allowed a period of at least 15 days (30 days in case of electronic policies and policies sourced through distance mode) from the date of receipt of the policy to review the terms and conditions of the policy and to return the same if not acceptable. 3 If the insured has no",
-    "time_limit": "15 days",
-    "who_to_contact": "Not specified",
-    "source_url": ""
+    "topic": "Bima Bharosa Grievance Management System",
+    "insurance_type": "General",
+    "rule_summary": "IRDAI has launched the Bima Bharosa Portal in 2022. Apart from creating a central repository of industry-wide insurance grievance data, Bima Bharosa is a grievance redress monitoring tool for IRDAI. Policyholders who have grievances should register their complaints with the Grievance Redress Channel of the Insurance Company first. If policyholders are not able to access the insurance company directly for any reason, Bima Bharosa Portal provides a gateway to register complaints with insurance com",
+    "time_limit": "Not specified",
+    "who_to_contact": "IRDAI has launched the Bima Bharosa Portal in 2022. Apart from creating a central repository of industry-wide insurance grievance data, Bima Bharosa is a grievance redress monitoring tool for IRDAI. P",
+    "source_url": "https://policyholder.gov.in/integrated-grievance-management-system"
   },
   {
-    "topic": "Rejection Of Claims",
-    "insurance_type": "General/Claims",
-    "rule_summary": "Individuals covered under group policies have had their claims rejected on technical grounds like slight delays in intimation of claims. IRDA has advised insurance companies that contractual conditions should not prevent them from considering genuine claims. This is especially if unavoidable circumstances prevented the consumer from following some of the policy conditions like time-frame for intimation. Download Access from Desktop Files and folders can be managed directly from the file explorer",
+    "topic": "Group Insurance",
+    "insurance_type": "General",
+    "rule_summary": "A group insurance policy gives you advantages of standardised coverage and very competitive premium rates. You can avail of group insurance policies that a group you belong to takes. Groups – for this purpose - can be employer-employee groups or non employer-employee groups as defined by IRDA’s group insurance guidelines. (Examples are holders of the same credit card, savings bank account holders of a bank or members of the same social or cultural association and so on.)",
     "time_limit": "Not specified",
-    "who_to_contact": "Not specified",
+    "who_to_contact": "Your insurer's grievance officer; IRDAI toll free 155-255",
+    "source_url": "https://policyholder.gov.in/group-insurance"
+  },
+  {
+    "topic": "Motor Insurance - Partial Loss Claims",
+    "insurance_type": "Motor",
+    "rule_summary": "IRDA has issued an Order with respect to Modifications to GR 9: Depreciation on Parts for Partial Loss Claims of the erstwhile India Motor tariff Download Access from Desktop Files and folders can be managed directly from the file explorer of your desktop operating system. Read more. WebDAV URL",
+    "time_limit": "Not specified",
+    "who_to_contact": "Your insurer's grievance officer; IRDAI toll free 155-255",
+    "source_url": "https://policyholder.gov.in/motor-insurance-partial-loss-claims"
+  },
+  {
+    "topic": "Ombudsman",
+    "insurance_type": "General",
+    "rule_summary": "The Insurance Ombudsman scheme was created by the Government of India for individual policyholders to have their complaints settled out of the courts system in a cost-effective, efficient and impartial way. There are at present 17 Insurance Ombudsman in different locations and any person who has a grievance against an insurer, may himself or through his legal heirs, nominee or assignee, make a complaint in writing to the Insurance ombudsman within whose territorial jurisdiction the branch or off",
+    "time_limit": "15 days",
+    "who_to_contact": "The Insurance Ombudsman scheme was created by the Government of India for individual policyholders to have their complaints settled out of the courts system in a cost-effective, efficient and impartia",
+    "source_url": "https://policyholder.gov.in/ombudsman"
+  },
+  {
+    "topic": "Portability of Health Insurance",
+    "insurance_type": "Health",
+    "rule_summary": "When you change your health insurance policy from one insurance company to another, you don’t have to lose the benefits you have accumulated. In the past in health insurance policies, such a move resulted in your losing benefits like the waiting period for covering \"Pre-existing Diseases\".",
+    "time_limit": "45 days",
+    "who_to_contact": "Your insurer's grievance officer; IRDAI toll free 155-255",
+    "source_url": "https://policyholder.gov.in/portability-of-health-insurance"
+  },
+  {
+    "topic": "Rejection of Claims",
+    "insurance_type": "General/Claims",
+    "rule_summary": "Individuals covered under group policies have had their claims rejected on technical grounds like slight delays in intimation of claims. IRDA has advised insurance companies that contractual conditions should not prevent them from considering genuine claims. This is especially if unavoidable circumstances prevented the consumer from following some of the policy conditions like time-frame for intimation.",
+    "time_limit": "Not specified",
+    "who_to_contact": "Your insurer's grievance officer; IRDAI toll free 155-255",
     "source_url": "https://policyholder.gov.in/rejection-of-claims"
   },
   {
-    "topic": "Renewability",
+    "topic": "Renewability of Health Insurance",
     "insurance_type": "Health",
-    "rule_summary": "Yes. When you get a new policy, generally, there will be a 30 days waiting period starting from the policy inception date, during which period any hospitalization charges will not be payable by the insurance companies. However, this is not applicable to any emergency hospitalization occurring due to an accident. This waiting period will not be applicable for subsequent policies under renewal. It is a medical condition/disease that existed before you obtained health insurance policy, and it is si",
-    "time_limit": "30 days",
-    "who_to_contact": "Get the information about the buying insurance, making a claim, consumer complaints and awareness",
-    "source_url": "https://policyholder.gov.in/home"
+    "rule_summary": "There has been some concern among consumers, especially senior citizens, about insurance companies turning down the renewal of health insurance policies. IRDA has stipulated that a health insurance policy should always be renewed except if there has been",
+    "time_limit": "Not specified",
+    "who_to_contact": "Your insurer's grievance officer; IRDAI toll free 155-255",
+    "source_url": "https://policyholder.gov.in/renewability-of-health-insurance"
+  },
+  {
+    "topic": "Unit Linked Products",
+    "insurance_type": "Life",
+    "rule_summary": "Unit linked insurance products are complex in nature. In order to ensure fair treatment to the policyholder, IRDA has taken several initiatives. 1 Insurers must provide the prospect/policyholder all relevant information about various charges for each policy year",
+    "time_limit": "Not specified",
+    "who_to_contact": "Your insurer's grievance officer; IRDAI toll free 155-255",
+    "source_url": "https://policyholder.gov.in/unit-linked-products"
   }
 ]

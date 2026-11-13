@@ -4,9 +4,18 @@ from pathlib import Path
 RAW_DIR = Path("data/raw")
 
 SOURCES = {
+  
     "free-look-period": "https://policyholder.gov.in/free-look-period",
     "rejection-of-claims": "https://policyholder.gov.in/rejection-of-claims",
-    "renewability": "https://policyholder.gov.in/home"
+    "portability": "https://policyholder.gov.in/portability-of-health-insurance",
+    "renewability": "https://policyholder.gov.in/renewability-of-health-insurance",
+    "group-insurance": "https://policyholder.gov.in/group-insurance",
+    "ulip-unit-linked": "https://policyholder.gov.in/unit-linked-products",
+    "distance-marketing": "https://policyholder.gov.in/distance-marketing",
+    "grievance-bima-bharosa": "https://policyholder.gov.in/integrated-grievance-management-system",
+    "ombudsman": "https://policyholder.gov.in/ombudsman",
+    "motor-partial-loss": "https://policyholder.gov.in/motor-insurance-partial-loss-claims",
+
 }
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (InsureClear student project)"}
