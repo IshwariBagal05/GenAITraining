@@ -1,0 +1,13 @@
+CONTEXT (records from IRDAI's consumer pages):
+{context}
+
+USER QUESTION:
+{question}
+
+Work through these steps silently, then output only the JSON:
+1. Find which context records, if any, directly answer the question.
+2. If none do, set confidence to "low", say in the answer that the IRDAI pages in your records do not cover this, and suggest where the user can ask (their insurer, IRDAI toll free 155-255, or the Insurance Ombudsman).
+3. If one or more do, answer in at most 4 short sentences. Start with the rule, include the exact time limit from the context, and name the topic in brackets, for example [Free-Look Period].
+4. 4. If the answer depends on the policy type or on how the policy was bought and the question does not say which, give both cases and name each time limit. If the user's facts satisfy every case (for example 10 days is within both 15 and 30), say yes and mention both limits. If they satisfy only some cases, set confidence to at most "medium" and make follow_up a question asking for the missing detail. Never pick one case silently.
+5. confidence: "high" only if a record states the rule directly and the question gives enough detail; "medium" if the rule applies but a detail is missing or it depends on the policy; "low" if the context does not answer it.
+6. follow_up: one short question that would let you answer more exactly (for example policy type or date received), or an empty string if none is needed.

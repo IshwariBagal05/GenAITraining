@@ -1,0 +1,7 @@
+CONTEXT:
+{context}
+
+QUESTION:
+{question}
+
+Answer the question using the context.

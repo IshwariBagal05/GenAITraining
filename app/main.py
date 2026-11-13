@@ -1,5 +1,7 @@
-from typing import Optional
+from typing import Literal,Optional
 
+from app.chat import answer_question
+from app.llm import LLMError
 from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel, Field
 
@@ -63,3 +65,24 @@ def ask_question(body: Question):
                      "score": m["score"]} for m in matches],
         "disclaimer": DISCLAIMER,
     }
+
+class ChatRequest(BaseModel):
+    question: str = Field(..., min_length=3)
+    prompt_version: Literal["v1", "v2"] = "v2"
+
+
+class ChatResponse(BaseModel):
+    answer: str
+    confidence: Literal["low", "medium", "high"]
+    follow_up: str
+    sources: list[dict] = []
+    disclaimer: str
+
+
+@app.post("/chat", response_model=ChatResponse)
+def chat(body: ChatRequest):
+    try:
+        result = answer_question(body.question, body.prompt_version)
+    except LLMError as e:
+        raise HTTPException(status_code=502, detail=str(e))
+    return {**result, "disclaimer": DISCLAIMER}

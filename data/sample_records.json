@@ -15,7 +15,7 @@
     "rule_summary": "An insurance repository keeps your policies in electronic form in one e-insurance account, so you can view and manage them without paper copies.",
     "time_limit": "Not specified",
     "who_to_contact": "The insurance repository or your insurer",
-    "source_url": "https://policyholder.gov.in"
+    "source_url": "https://policyholder.gov.in/insurance-repository-system"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "rule_summary": "A health policy should be renewable, and an insurer cannot refuse renewal on grounds such as past claims. Renewal can be refused only in cases like fraud or misrepresentation.",
     "time_limit": "Grace period of about 30 days after the due date",
     "who_to_contact": "The insurer",
-    "source_url": "https://policyholder.gov.in"
+    "source_url": "https://policyholder.gov.in/renewability-of-health-insurance"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "rule_summary": "You can move your health policy to another insurer at renewal and keep credit for waiting periods already served. You apply to the new insurer, which gets your records from the old one.",
     "time_limit": "Apply 45 to 60 days before the renewal date",
     "who_to_contact": "The new insurer you want to move to",
-    "source_url": "https://policyholder.gov.in"
+    "source_url": "https://policyholder.gov.in/portability-of-health-insurance"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "rule_summary": "A group policy covers members of a group, such as employees, under one master policy. Members are covered by the group's terms and usually cannot change them individually.",
     "time_limit": "Not specified",
     "who_to_contact": "The group policyholder (employer or society) and the insurer",
-    "source_url": "https://policyholder.gov.in"
+    "source_url": "https://policyholder.gov.in/group-insurance"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "rule_summary": "A Unit Linked Insurance Plan combines life cover with market-linked investment. Charges are deducted from the premium, and the fund value depends on market performance.",
     "time_limit": "Lock-in of 5 years",
     "who_to_contact": "The insurer",
-    "source_url": "https://policyholder.gov.in"
+    "source_url": "https://policyholder.gov.in/unit-linked-products"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "rule_summary": "Insurance sold by phone, post, email or the internet without a face-to-face meeting has extra protections. You get a longer window to review and return the policy.",
     "time_limit": "30 days free-look",
     "who_to_contact": "The insurer",
-    "source_url": "https://policyholder.gov.in"
+    "source_url": "https://policyholder.gov.in/distance-marketing"
   },
   {
     "id": 8,
@@ -78,7 +78,7 @@
     "rule_summary": "A policy held in electronic form has the same legal value as a paper policy. You can buy, store and service it online and keep it in an e-insurance account.",
     "time_limit": "Not specified",
     "who_to_contact": "The insurer or your e-insurance account provider",
-    "source_url": "https://policyholder.gov.in"
+    "source_url": "https://policyholder.gov.in/e-insurance-policies"
   },
   {
     "id": 10,
@@ -87,7 +87,7 @@
     "rule_summary": "For damage that is repairable, the insurer appoints a surveyor to assess the loss and pays for the repair, usually directly to a network garage or to you. Depreciation and the policy excess may be deducted.",
     "time_limit": "Report the loss to the insurer as soon as possible",
     "who_to_contact": "The motor insurer's claims desk and the appointed surveyor",
-    "source_url": "https://policyholder.gov.in"
+    "source_url": "https://policyholder.gov.in/motor-insurance-partial-loss-claims"
   },
   {
     "id": 11,
@@ -96,7 +96,7 @@
     "rule_summary": "Common definitions and standard terms are used across health policies so that terms such as pre-existing disease and exclusions mean the same thing for every insurer. This makes policies easier to compare.",
     "time_limit": "Not specified",
     "who_to_contact": "The insurer",
-    "source_url": "https://policyholder.gov.in"
+    "source_url": "https://policyholder.gov.in/guidelines-on-standardization-in-health-insurance"
   },
   {
     "id": 12,

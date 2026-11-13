@@ -57,3 +57,11 @@ and Bima Bharosa pages.
 This project is for educational and informational purposes.
 Users should verify current insurance rules with official
 IRDAI publications and their insurance company.
+
+## LLM setup (Day 6)
+
+1. Copy `.env.example` to `.env` and add your own Groq or Gemini key.
+2. Set `LLM_PROVIDER=groq` or `gemini`.
+3. Run `uvicorn app.main:app --reload` and use `POST /chat` at /docs.
+
+Prompts live in `prompts/`; the prompt comparison is in `eval/prompt_compare.md`.
