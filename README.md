@@ -65,3 +65,13 @@ IRDAI publications and their insurance company.
 3. Run `uvicorn app.main:app --reload` and use `POST /chat` at /docs.
 
 Prompts live in `prompts/`; the prompt comparison is in `eval/prompt_compare.md`.
+
+## Semantic search (Day 7)
+
+```bash
+pip install -r requirements.txt
+python -m app.vectorstore          # builds the Chroma index (chroma_db/)
+uvicorn app.main:app --reload      # then GET /search/semantic?q=your question
+```
+
+Chunks keep source, page and title. Results for my 10 questions are in `eval/search_results.md`.

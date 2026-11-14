@@ -86,3 +86,16 @@ def chat(body: ChatRequest):
     except LLMError as e:
         raise HTTPException(status_code=502, detail=str(e))
     return {**result, "disclaimer": DISCLAIMER}
+
+@app.get("/search/semantic")
+def semantic_search(q: str = Query(..., min_length=2),
+                    limit: int = Query(3, ge=1, le=10)):
+    try:
+        from app.vectorstore import query as semantic_query
+        hits = semantic_query(q, limit)
+    except Exception as e:
+        raise HTTPException(
+            status_code=503,
+            detail=f"Semantic index unavailable: {e}. Run: python -m app.vectorstore",
+        )
+    return {"query": q, "count": len(hits), "results": hits}
