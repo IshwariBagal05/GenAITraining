@@ -40,7 +40,7 @@ def chunk_blocks(blocks, max_chars=MAX_CHARS):
     return chunks
 
 
-def load_chunks():
+def load_chunks(max_chars=MAX_CHARS):
     """Chunk every saved page. Each chunk keeps source, page and title."""
     chunks = []
     for path in sorted(RAW_DIR.glob("*.html")):
@@ -50,7 +50,7 @@ def load_chunks():
         except Exception as e:
             print(f"[SKIPPED] {slug}: {e}")
             continue
-        for i, text in enumerate(chunk_blocks(blocks)):
+        for i, text in enumerate(chunk_blocks(blocks, max_chars)):
             chunks.append({
                 "id": f"{slug}-{i}",
                 "text": text,

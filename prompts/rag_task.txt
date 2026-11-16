@@ -1,0 +1,7 @@
+SOURCES:
+{context}
+
+QUESTION:
+{question}
+
+Answer from the SOURCES only. Cite the sources you used, for example ["S1"]. If they do not answer the question, set answerable to false and begin the answer with "I don't know".

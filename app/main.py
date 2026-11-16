@@ -99,3 +99,17 @@ def semantic_search(q: str = Query(..., min_length=2),
             detail=f"Semantic index unavailable: {e}. Run: python -m app.vectorstore",
         )
     return {"query": q, "count": len(hits), "results": hits}
+class AskRequest(BaseModel):
+    question: str = Field(..., min_length=3)
+
+
+@app.post("/ask")
+def ask_endpoint(body: AskRequest):
+    try:
+        from app.rag import ask as rag_ask
+        result = rag_ask(body.question)
+    except LLMError as e:
+        raise HTTPException(status_code=502, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=503, detail=f"RAG unavailable: {e}")
+    return {**result, "disclaimer": DISCLAIMER}
