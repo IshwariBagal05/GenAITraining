@@ -1,3 +1,4 @@
+import uuid
 from typing import Literal,Optional
 
 from app.chat import answer_question
