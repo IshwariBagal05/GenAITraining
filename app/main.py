@@ -113,3 +113,34 @@ def ask_endpoint(body: AskRequest):
     except Exception as e:
         raise HTTPException(status_code=503, detail=f"RAG unavailable: {e}")
     return {**result, "disclaimer": DISCLAIMER}
+
+class AgentRequest(BaseModel):
+    thread_id: Optional[str] = None
+    question: Optional[str] = Field(None, min_length=3)
+    approve: Optional[bool] = None
+    args: Optional[dict] = None
+
+
+@app.post("/agent")
+def agent_endpoint(body: AgentRequest):
+    try:
+        from app import graph as agent_graph
+        waiting = bool(body.thread_id) and agent_graph.is_waiting(body.thread_id)
+
+        if waiting and body.approve is not None:        # resume a paused thread
+            result = agent_graph.resume(body.thread_id, body.approve, body.args)
+        elif waiting:
+            raise HTTPException(status_code=409,
+                                detail="This thread is waiting for approval. "
+                                       "Send approve true or false first.")
+        elif body.question:                              # new question or follow-up
+            thread_id = body.thread_id or str(uuid.uuid4())
+            result = agent_graph.start(body.question, thread_id)
+        elif body.approve is not None:
+            raise HTTPException(status_code=409,
+                                detail="No approval is pending for this thread_id.")
+        else:
+            raise HTTPException(status_code=422,
+                                detail="Send a question, or approve with a thread_id.")
+    except HTTPException:
+        raise

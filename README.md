@@ -74,4 +74,15 @@ python -m app.vectorstore          # builds the Chroma index (chroma_db/)
 uvicorn app.main:app --reload      # then GET /search/semantic?q=your question
 ```
 
-Chunks keep source, page and title. Results for my 10 questions are in `eval/search_results.md`.
+**Winner:** config A (chunk size 400, top-k 3), 80% overall (12/15), against 73% (11/15)
+for config B (chunk size 900, top-k 5). The gap is one question (Q1), so this is weak evidence.
+
+- Both configs said "I don't know" on every unanswerable question (Q6, Q10, Q15) and invented nothing.
+- Both refused Q7 and Q8. I searched the chunks: no page states a grace period for a late
+  health renewal (the only grace period is for porting), and none mentions parents or
+  dependents. So the refusals were correct and my eval rows were too optimistic.
+- Q9: [what the retrieval command showed: free-look page missing from the top 3, or answer absent].
+- Config B also missed Q1 and Q9 on keywords: with 900-character chunks the ulip page ranked
+  above the free-look page for the LIC question.
+- Retrieval hit is 100% for both, which is a lenient measure (any chunk from an expected page counts).
+- Next: [fix Q7/Q8 labels or re-run, and improve retrieval for phone and online sales].
