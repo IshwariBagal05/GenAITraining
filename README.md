@@ -86,3 +86,18 @@ for config B (chunk size 900, top-k 5). The gap is one question (Q1), so this is
   above the free-look page for the LIC question.
 - Retrieval hit is 100% for both, which is a lenient measure (any chunk from an expected page counts).
 - Next: [fix Q7/Q8 labels or re-run, and improve retrieval for phone and online sales].
+
+
+## Chat UI and rights timeline (Day 10)
+
+![InsureClear UI](docs/ui_screenshot.png)
+
+```bash
+uvicorn app.main:app --reload     # terminal 1: API
+streamlit run ui/app.py           # terminal 2: UI at http://localhost:8501
+```
+
+- **Ask** mode calls `/ask` and shows citations. **Agent** mode calls `/agent`, keeps memory per thread, and asks for approval before the refund calculator runs.
+- 👍 / 👎 on each answer is saved to `data/feedback.jsonl`.
+- **Your rights timeline** shows five steps for the selected policy type: policy received, free-look ends, claim intimation, insurer reply, escalation to Bima Bharosa / Ombudsman. Each step cites an IRDAI page, and `python -m app.timeline` checks that the quoted wording really appears in the downloaded page. Where the pages give no day count, none is shown.
+- [One or two lines in your own words about what the check found, for example whether the 30-day count appears on your pages.]
