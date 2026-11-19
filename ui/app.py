@@ -1,5 +1,6 @@
 import html
 import json
+import os
 import sys
 from datetime import date, datetime
 from pathlib import Path
@@ -14,7 +15,7 @@ from app.timeline import POLICY_TYPES, build_timeline   # noqa: E402
 from app.tools import FREE_LOOK_DAYS                    # noqa: E402
 
 FEEDBACK_FILE = ROOT / "data" / "feedback.jsonl"
-DEFAULT_API = "http://127.0.0.1:8000"
+DEFAULT_API = os.getenv("INSURECLEAR_API_URL", "http://127.0.0.1:8000")
 DISCLAIMER = ("Information from IRDAI's official consumer pages, not legal or financial "
               "advice. Check your policy document and contact your insurer or the "
               "Insurance Ombudsman for your case.")

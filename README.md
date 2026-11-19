@@ -101,3 +101,18 @@ streamlit run ui/app.py           # terminal 2: UI at http://localhost:8501
 - 👍 / 👎 on each answer is saved to `data/feedback.jsonl`.
 - **Your rights timeline** shows five steps for the selected policy type: policy received, free-look ends, claim intimation, insurer reply, escalation to Bima Bharosa / Ombudsman. Each step cites an IRDAI page, and `python -m app.timeline` checks that the quoted wording really appears in the downloaded page. Where the pages give no day count, none is shown.
 - [One or two lines in your own words about what the check found, for example whether the 30-day count appears on your pages.]
+
+## Run with Docker
+
+1. Copy `.env.example` to `.env` and add a Groq or Gemini API key for `/ask` and Agent answers.
+2. From the project root, run:
+
+   ```bash
+   docker compose up --build
+   ```
+
+3. Open the UI at <http://localhost:8501>. The API is available at
+   <http://localhost:8000> (interactive docs at <http://localhost:8000/docs>).
+
+Use `docker compose down` to stop the services. The UI connects to the API through
+the Compose network; no API address change is needed in the sidebar.

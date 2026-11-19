@@ -1,0 +1,9 @@
+.env
+.git
+.pytest_cache
+.ruff_cache
+.venv
+__pycache__
+*.py[cod]
+chroma_db
+data/feedback.jsonl

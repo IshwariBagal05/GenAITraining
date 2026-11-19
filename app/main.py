@@ -145,3 +145,4 @@ def agent_endpoint(body: AgentRequest):
                                 detail="Send a question, or approve with a thread_id.")
     except HTTPException:
         raise
+    return result
