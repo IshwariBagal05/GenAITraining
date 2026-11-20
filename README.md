@@ -1,5 +1,6 @@
 
 # InsureClear
+[![CI](https://github.com/IshwariBagal05/GenAITraining/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/IshwariBagal05/GenAITraining/actions/workflows/ci.yml)
 
 ## Project Description
 
