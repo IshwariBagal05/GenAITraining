@@ -57,9 +57,18 @@ jobs:
       - name: Start the container and check /health
         run: |
           docker run -d --name api -p 8000:8000 insureclear:ci
-          for i in $(seq 1 30); do
-            if curl -fsS http://localhost:8000/health; then echo; exit 0; fi
+          for i in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:8000/health; then echo; exit 0; fi
+            if [ "$(docker inspect -f '{{.State.Running}}' api)" != "true" ]; then
+              echo "The container stopped."
+              break
+            fi
             sleep 2
           done
+          echo "---- docker ps ----"
+          docker ps -a
+          echo "---- exit code and error ----"
+          docker inspect -f '{{.State.ExitCode}} {{.State.Error}}' api
+          echo "---- logs ----"
           docker logs api
           exit 1
