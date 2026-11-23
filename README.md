@@ -117,3 +117,12 @@ streamlit run ui/app.py           # terminal 2: UI at http://localhost:8501
 
 Use `docker compose down` to stop the services. The UI connects to the API through
 the Compose network; no API address change is needed in the sidebar.
+## Live Deployment (Day 12)
+
+InsureClear is deployed on Render.
+
+- **Live API:** https://genaitraining-4ihx.onrender.com
+- **Health Check:** https://genaitraining-4ihx.onrender.com/health
+- **API Documentation:** https://genaitraining-4ihx.onrender.com/docs
+
+The health endpoint confirms that the API is running and insurance records are loaded.
