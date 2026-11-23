@@ -180,11 +180,192 @@ def render_feedback(i, m):
 
 # ---------- page ----------
 st.set_page_config(page_title="InsureClear", page_icon="🛡️", layout="wide")
+
+
+st.markdown("""
+<style>
+:root {
+  --ic-navy: #142a35;
+  --ic-emerald: #167a67;
+  --ic-emerald-dark: #116454;
+  --ic-mint: #eaf5f1;
+  --ic-ink: #20313a;
+  --ic-muted: #71818a;
+  --ic-line: #e3ebe8;
+}
+.stApp {
+  background: linear-gradient(180deg, #f7faf9 0%, #f3f7f6 100%);
+  color: var(--ic-ink);
+}
+[data-testid="stHeader"] { background: rgba(247,250,249,.88); }
+.block-container {
+  max-width: 1440px;
+  padding-top: 2.2rem;
+  padding-bottom: 3rem;
+}
+[data-testid="stSidebar"] {
+  background: linear-gradient(180deg, #142a35 0%, #1c3942 100%);
+  border-right: 1px solid rgba(255,255,255,.08);
+}
+[data-testid="stSidebar"] * { color: #f4f8f7 !important; }
+[data-testid="stSidebar"] [data-testid="stWidgetLabel"] p,
+[data-testid="stSidebar"] .stCaption { color: #c2d2d0 !important; }
+[data-testid="stSidebar"] input,
+[data-testid="stSidebar"] textarea,
+[data-testid="stSidebar"] [data-baseweb="select"] > div {
+  background: #ffffff !important;
+  color: #20313a !important;
+  border: 1px solid #d7e4df !important;
+  border-radius: 11px !important;
+}
+[data-testid="stSidebar"] input::placeholder,
+[data-testid="stSidebar"] textarea::placeholder {
+  color: #71818a !important;
+}
+[data-testid="stSidebar"] [data-baseweb="select"] *,
+[data-testid="stSidebar"] [data-testid="stDateInput"] * {
+  color: #20313a !important;
+}
+[data-testid="stSidebar"] [data-baseweb="select"] svg {
+  fill: #52666d !important;
+}
+[data-testid="stSidebar"] [role="radiogroup"] label { color: #f4f8f7 !important; }
+[data-testid="stSidebar"] hr { border-color: rgba(255,255,255,.16); }
+[data-testid="stSidebar"] .stButton button {
+  background: #e7f4ef !important;
+  color: #163b36 !important;
+  border: 0 !important;
+  border-radius: 10px !important;
+  font-weight: 650 !important;
+}
+.ic-sidebar-brand {
+  padding: 18px 16px;
+  margin: 0 0 22px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 17px;
+  background: rgba(255,255,255,.07);
+}
+.ic-sidebar-brand .mark {
+  display: inline-flex; width: 38px; height: 38px; align-items: center;
+  justify-content: center; border-radius: 12px; background: #dff3eb;
+  color: #126452 !important; font-size: 21px; margin-bottom: 10px;
+}
+.ic-sidebar-brand .name { font-size: 19px; font-weight: 800; letter-spacing: .2px; }
+.ic-sidebar-brand .sub { color: #bfd0cd !important; font-size: 12px; margin-top: 4px; }
+.ic-hero {
+  position: relative; overflow: hidden; padding: 30px 32px; margin: 0 0 22px;
+  border-radius: 22px; color: white;
+  background: radial-gradient(circle at 90% 10%, rgba(89,177,147,.35), transparent 30%),
+              linear-gradient(120deg, #142a35 0%, #1b4c4b 58%, #167a67 100%);
+  box-shadow: 0 14px 35px rgba(20,42,53,.12);
+}
+.ic-hero .eyebrow {
+  color: #bce6d7; text-transform: uppercase; letter-spacing: 1.8px;
+  font-size: 11px; font-weight: 750; margin-bottom: 12px;
+}
+.ic-hero h1 { color: white; font-size: clamp(30px, 4vw, 43px); line-height: 1.1;
+  letter-spacing: -1.2px; margin: 0 0 10px; font-weight: 800; }
+.ic-hero p { color: #d8e9e4; font-size: 15px; max-width: 700px; line-height: 1.65; margin: 0; }
+.ic-hero .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+.ic-hero .chip {
+  border:1px solid rgba(255,255,255,.24); background:rgba(255,255,255,.10);
+  color:#f1faf6; border-radius:999px; padding:6px 11px; font-size:11px;
+}
+.ic-section-kicker {
+  color: #167a67; font-size: 11px; letter-spacing: 1.6px; font-weight: 800;
+  text-transform: uppercase; margin: 8px 0 8px;
+}
+[data-testid="stExpander"] {
+  border: 1px solid var(--ic-line) !important;
+  border-radius: 16px !important; background: #fff !important;
+  box-shadow: 0 5px 18px rgba(25,55,53,.035);
+}
+[data-testid="stExpander"] summary { font-weight: 700; color: var(--ic-navy); }
+[data-testid="stChatMessage"] {
+  background: #fff; border: 1px solid var(--ic-line);
+  border-radius: 16px; padding: 14px 16px; margin-bottom: 12px;
+}
+[data-testid="stChatInput"] textarea {
+  border: 1px solid #d7e5df !important; border-radius: 15px !important;
+  background: #fff !important;
+}
+.stButton button {
+  border-radius: 10px; border: 1px solid #d6e4df;
+  font-weight: 650; transition: all .15s ease;
+}
+.stButton button[kind="primary"] {
+  background: var(--ic-emerald); border-color: var(--ic-emerald); color: white;
+}
+.stButton button:hover { border-color: var(--ic-emerald); color: var(--ic-emerald); }
+[data-testid="stMetric"] {
+  background: #fff; border: 1px solid var(--ic-line);
+  border-radius: 14px; padding: 14px 16px;
+}
+.stAlert { border-radius: 12px; }
+.ic-disclaimer {
+  color: #6e7e83; font-size: 12px; line-height: 1.6;
+  padding: 10px 14px; background: #edf4f1; border-left: 3px solid #167a67;
+  border-radius: 0 10px 10px 0; margin: 0 0 18px;
+}
+@media (max-width: 800px) {
+  .block-container { padding: 1rem 1rem 2rem; }
+  .ic-hero { padding: 24px 21px; }
+}
+
+/* Sidebar readability improvements */
+
+/* Sidebar buttons */
+[data-testid="stSidebar"] .stButton button {
+    background: #e7f4ef !important;
+    color: #163b36 !important;
+    border: 1px solid #c5e0d5 !important;
+    border-radius: 11px !important;
+    font-weight: 700 !important;
+}
+
+[data-testid="stSidebar"] .stButton button p,
+[data-testid="stSidebar"] .stButton button span,
+[data-testid="stSidebar"] .stButton button div {
+    color: #163b36 !important;
+}
+
+/* Sidebar input text */
+[data-testid="stSidebar"] input {
+    color: #20313a !important;
+    background: #ffffff !important;
+}
+
+/* Dropdown selected text */
+[data-testid="stSidebar"] [data-baseweb="select"] * {
+    color: #20313a !important;
+}
+
+/* Sidebar labels */
+[data-testid="stSidebar"] [data-testid="stWidgetLabel"] p {
+    color: #e5efed !important;
+    font-weight: 600 !important;
+}
+
+/* Better sidebar spacing */
+[data-testid="stSidebar"] .block-container {
+    padding-top: 1.5rem;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
 for key, default in {"messages": [], "pending": None, "thread_id": None}.items():
     st.session_state.setdefault(key, default)
 
 with st.sidebar:
-    st.header("Settings")
+    st.markdown("""
+    <div class="ic-sidebar-brand">
+      <div class="mark">🛡</div>
+      <div class="name">InsureClear</div>
+      <div class="sub">Your insurance rights, made clearer.</div>
+    </div>
+    """, unsafe_allow_html=True)
+    st.header("Workspace settings")
     mode = st.radio("Mode", ["Ask", "Agent"],
                     help="Ask answers from the IRDAI pages with citations. Agent can also run "
                          "the free-look refund calculator, and asks you to approve first.")
@@ -206,10 +387,23 @@ with st.sidebar:
     up, down = feedback_counts()
     st.caption(f"Feedback saved: 👍 {up} · 👎 {down}")
 
-st.title("🛡️ InsureClear")
-st.caption(DISCLAIMER)
+st.markdown("""
+<div class="ic-hero">
+  <div class="eyebrow">Your personal insurance rights assistant</div>
+  <h1>Clarity when<br>insurance gets complicated.</h1>
+  <p>Understand policy timelines, explore your rights and ask questions with answers grounded in official IRDAI consumer information.</p>
+  <div class="chips">
+    <span class="chip">✦ IRDAI-grounded information</span>
+    <span class="chip">◈ Ask & Agent modes</span>
+    <span class="chip">⌁ Policy timeline support</span>
+  </div>
+</div>
+<div class="ic-disclaimer">ℹ️ """ + html.escape(DISCLAIMER) + """</div>
+""", unsafe_allow_html=True)
 
-with st.expander("📅 Your rights timeline", expanded=True):
+st.markdown('<div class="ic-section-kicker">Your policy workspace</div>', unsafe_allow_html=True)
+
+with st.expander("📅  Your rights timeline", expanded=True):
     try:
         steps = build_timeline(ptype, sold_via, received)
         st.markdown(timeline_html(steps), unsafe_allow_html=True)

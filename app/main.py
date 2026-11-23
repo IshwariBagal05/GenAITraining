@@ -1,26 +1,38 @@
+
+import logging
+import time
 import uuid
-from typing import Literal,Optional
+from functools import lru_cache
+from typing import Literal, Optional
 
 from app.chat import answer_question
 from app.llm import LLMError
+from app.records import get_by_id, load_records
+from app.smart_search import rank
 from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel, Field
 
-from app.records import load_records, get_by_id
-from app.smart_search import rank
-
-DISCLAIMER = ("Information from IRDAI's official consumer pages, not legal or "
-              "financial advice. Check your policy document and contact your "
-              "insurer or the Insurance Ombudsman for your case.")
+DISCLAIMER = (
+    "Information from IRDAI's official consumer pages, not legal or "
+    "financial advice. Check your policy document and contact your "
+    "insurer or the Insurance Ombudsman for your case."
+)
 
 app = FastAPI(title="InsureClear API", version="0.1.0")
 
 RECORDS = load_records()
+logger = logging.getLogger(__name__)
+
+
+@lru_cache(maxsize=128)
+def cached_answer(question: str, prompt_version: str):
+    return answer_question(question, prompt_version)
 
 
 class Question(BaseModel):
     name: Optional[str] = None
-    question: str = Field(..., min_length=3)
+    question: str = Field(..., min_length=3, max_length=2000)
+
 
 
 @app.get("/health")
@@ -68,7 +80,7 @@ def ask_question(body: Question):
     }
 
 class ChatRequest(BaseModel):
-    question: str = Field(..., min_length=3)
+    question: str = Field(..., min_length=3, max_length=2000)
     prompt_version: Literal["v1", "v2"] = "v2"
 
 
@@ -82,10 +94,21 @@ class ChatResponse(BaseModel):
 
 @app.post("/chat", response_model=ChatResponse)
 def chat(body: ChatRequest):
+    start_time = time.perf_counter()
+
     try:
-        result = answer_question(body.question, body.prompt_version)
+        result = cached_answer(body.question.strip(), body.prompt_version)
     except LLMError as e:
         raise HTTPException(status_code=502, detail=str(e))
+
+    latency_ms = round((time.perf_counter() - start_time) * 1000, 2)
+
+    logger.info(
+        "Chat request completed | latency_ms=%s | cache=%s",
+        latency_ms,
+        cached_answer.cache_info(),
+    )
+
     return {**result, "disclaimer": DISCLAIMER}
 
 @app.get("/search/semantic")
@@ -100,8 +123,9 @@ def semantic_search(q: str = Query(..., min_length=2),
             detail=f"Semantic index unavailable: {e}. Run: python -m app.vectorstore",
         )
     return {"query": q, "count": len(hits), "results": hits}
+
 class AskRequest(BaseModel):
-    question: str = Field(..., min_length=3)
+    question: str = Field(..., min_length=3, max_length=2000)
 
 
 @app.post("/ask")
@@ -117,7 +141,7 @@ def ask_endpoint(body: AskRequest):
 
 class AgentRequest(BaseModel):
     thread_id: Optional[str] = None
-    question: Optional[str] = Field(None, min_length=3)
+    question: Optional[str] = Field(None, min_length=3, max_length=2000)
     approve: Optional[bool] = None
     args: Optional[dict] = None
 
