@@ -1,5 +1,6 @@
 
 import logging
+logging.basicConfig(level=logging.INFO)
 import time
 import uuid
 from functools import lru_cache

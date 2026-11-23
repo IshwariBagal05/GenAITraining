@@ -2,127 +2,159 @@
 # InsureClear
 [![CI](https://github.com/IshwariBagal05/GenAITraining/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/IshwariBagal05/GenAITraining/actions/workflows/ci.yml)
 
-## Project Description
+## Project Overview
 
-InsureClear is an insurance information management project
-that helps users understand insurance rules and policyholder
-rights using information collected from official IRDAI sources.
+InsureClear is a GenAI-powered insurance information assistant that helps users understand insurance rules, policyholder rights, deadlines, and complaint procedures using information from official IRDAI sources.
+
+It combines Retrieval-Augmented Generation (RAG), semantic search, and LLM-based question answering to provide simple, source-grounded insurance information.
 
 ## Problem Statement
 
-Insurance information is spread across multiple pages.
-Users may find it difficult to locate important rules,
-deadlines, and complaint channels.
+Insurance rules and policyholder rights are spread across multiple official webpages and documents. Users may struggle to find accurate information about policy conditions, claim procedures, deadlines, and grievance channels.
 
-InsureClear organizes this information in one place and
-provides simple search and lookup functionality.
+InsureClear addresses this problem by organizing insurance information and allowing users to ask questions in natural language. It retrieves relevant information and generates answers supported by source references.
 
-## Features
+## Key Features
 
-- Display all insurance records
-- Search insurance information by keyword
-- Count records by insurance category
-- Retrieve a record using its ID
-- Access official source links
+- Natural-language insurance question answering.
+- Retrieval of relevant information from insurance records.
+- Semantic search using vector embeddings.
+- Source references for answers.
+- Insurance records search and lookup.
+- Chat interface built with Streamlit.
+- LLM integration with Groq and Gemini.
+- Response caching and request monitoring.
+- Input validation and prompt-injection protection.
+- Live API deployment on Render.
 
 ## Technology Stack
 
-- Python
-- JSON
-- Git and GitHub
-- VS Code
+| Component | Technology |
+|---|---|
+| Programming language | Python |
+| API framework | FastAPI |
+| User interface | Streamlit |
+| LLM providers | Groq, Gemini |
+| Vector database | ChromaDB |
+| Retrieval | RAG and semantic search |
+| Data format | JSON |
+| Testing | Pytest |
+| Code quality | Ruff |
+| Containerization | Docker |
+| CI | GitHub Actions |
+| Deployment | Render |
+
+## System Architecture
+
+```mermaid
+flowchart TD
+    A[User] --> B[Streamlit Chat UI]
+    B --> C[FastAPI Backend]
+    C --> D[Input Validation]
+    D --> E[Cache - LRU 128]
+    E -->|Cache Hit| J[Return Cached Answer]
+    E -->|Cache Miss| F[RAG and Semantic Search]
+    F --> G[Insurance Records and ChromaDB]
+    G --> H[LLM - Groq or Gemini]
+    H --> I[Answer with Sources]
+    I --> J
+    J --> B
+    B --> A
+```
 
 ## Project Structure
 
-- data/sample_records.json
-- app/records.py
-- app/cli.py
-- requirements.txt
-- .gitignore
+```text
+GenAITraining/
+├── app/
+│   ├── main.py
+│   ├── llm.py
+│   ├── chat.py
+│   ├── records.py
+│   ├── smart_search.py
+│   └── vectorstore.py
+├── data/
+├── prompts/
+├── tests/
+├── ui/
+├── docs/
+├── eval/
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+└── README.md
+```
 
 ## How to Run
 
-1. Create a virtual environment.
-2. Activate the environment.
-3. Run:
-
-   python -m app.cli
-
-## Data Source
-
-Insurance information is collected from official IRDAI
-and Bima Bharosa pages.
-
-## Disclaimer
-
-This project is for educational and informational purposes.
-Users should verify current insurance rules with official
-IRDAI publications and their insurance company.
-
-## LLM setup (Day 6)
-
-1. Copy `.env.example` to `.env` and add your own Groq or Gemini key.
-2. Set `LLM_PROVIDER=groq` or `gemini`.
-3. Run `uvicorn app.main:app --reload` and use `POST /chat` at /docs.
-
-Prompts live in `prompts/`; the prompt comparison is in `eval/prompt_compare.md`.
-
-## Semantic search (Day 7)
+1. Clone the repository.
+2. Create and activate a virtual environment.
+3. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
-python -m app.vectorstore          # builds the Chroma index (chroma_db/)
-uvicorn app.main:app --reload      # then GET /search/semantic?q=your question
 ```
 
-**Winner:** config A (chunk size 400, top-k 3), 80% overall (12/15), against 73% (11/15)
-for config B (chunk size 900, top-k 5). The gap is one question (Q1), so this is weak evidence.
-
-- Both configs said "I don't know" on every unanswerable question (Q6, Q10, Q15) and invented nothing.
-- Both refused Q7 and Q8. I searched the chunks: no page states a grace period for a late
-  health renewal (the only grace period is for porting), and none mentions parents or
-  dependents. So the refusals were correct and my eval rows were too optimistic.
-- Q9: [what the retrieval command showed: free-look page missing from the top 3, or answer absent].
-- Config B also missed Q1 and Q9 on keywords: with 900-character chunks the ulip page ranked
-  above the free-look page for the LIC question.
-- Retrieval hit is 100% for both, which is a lenient measure (any chunk from an expected page counts).
-- Next: [fix Q7/Q8 labels or re-run, and improve retrieval for phone and online sales].
-
-
-## Chat UI and rights timeline (Day 10)
-
-![InsureClear UI](docs/ui_screenshot.png)
+4. Copy `.env.example` to `.env` and configure your Groq or Gemini API key.
+5. Start the API:
 
 ```bash
-uvicorn app.main:app --reload     # terminal 1: API
-streamlit run ui/app.py           # terminal 2: UI at http://localhost:8501
+uvicorn app.main:app --reload
 ```
 
-- **Ask** mode calls `/ask` and shows citations. **Agent** mode calls `/agent`, keeps memory per thread, and asks for approval before the refund calculator runs.
-- 👍 / 👎 on each answer is saved to `data/feedback.jsonl`.
-- **Your rights timeline** shows five steps for the selected policy type: policy received, free-look ends, claim intimation, insurer reply, escalation to Bima Bharosa / Ombudsman. Each step cites an IRDAI page, and `python -m app.timeline` checks that the quoted wording really appears in the downloaded page. Where the pages give no day count, none is shown.
-- [One or two lines in your own words about what the check found, for example whether the 30-day count appears on your pages.]
+6. Open the API documentation at `http://localhost:8000/docs`.
 
-## Run with Docker
+To start the Streamlit interface separately:
 
-1. Copy `.env.example` to `.env` and add a Groq or Gemini API key for `/ask` and Agent answers.
-2. From the project root, run:
+```bash
+streamlit run ui/app.py
+```
 
-   ```bash
-   docker compose up --build
-   ```
+## Data Sources
 
-3. Open the UI at <http://localhost:8501>. The API is available at
-   <http://localhost:8000> (interactive docs at <http://localhost:8000/docs>).
+Insurance information is collected from official IRDAI policyholder resources and Bima Bharosa complaint-related resources.
 
-Use `docker compose down` to stop the services. The UI connects to the API through
-the Compose network; no API address change is needed in the sidebar.
-## Live Deployment (Day 12)
+## Disclaimer
 
-InsureClear is deployed on Render.
+InsureClear is an educational and informational project. Its responses are not legal or financial advice. Users should verify important decisions with official IRDAI publications and their insurance provider.
+## Production Notes (Day 13)
 
-- **Live API:** https://genaitraining-4ihx.onrender.com
-- **Health Check:** https://genaitraining-4ihx.onrender.com/health
-- **API Documentation:** https://genaitraining-4ihx.onrender.com/docs
+### Performance and Usage
 
-The health endpoint confirms that the API is running and insurance records are loaded.
+Tested locally using Groq (`openai/gpt-oss-120b`) with the same question submitted twice.
+
+| Metric | First Request | Second Request |
+|---|---:|---:|
+| Response latency | 1435.61 ms | 0.01 ms |
+| Cache status | Miss | Hit |
+| LLM call | Yes | No |
+| Input tokens | 995 | Cached |
+| Output tokens | 419 | Cached |
+| Total tokens | 1414 | Cached |
+
+### Production Improvements
+
+- **Latency and token logging:** Records request latency, input tokens, output tokens and total tokens.
+- **Response caching:** LRU cache with a maximum capacity of 128 entries.
+- **Input validation:** Questions must contain 3�2000 characters.
+- **Prompt injection protection:** User questions are kept separate from system instructions.
+- **Testing:** 14 automated tests passed; Ruff checks passed.
+
+### Measurement Note
+
+These latency values come from one local test, not a production load test. The second request was served from cache without another LLM call.
+
+## Evaluation Results (Day 13)
+
+| Evaluation Metric | Result |
+|---|---:|
+| Automated tests | 14 passed |
+| Ruff checks | Passed |
+| Semantic Search Configuration A | 80% (12/15) |
+| Semantic Search Configuration B | 73% (11/15) |
+| First request latency | 1435.61 ms |
+| Cached request latency | 0.01 ms |
+| Cache capacity | 128 entries |
+| Maximum question length | 2000 characters |
+
+Note: Latency results are from a single local test. Semantic search results are based on a 15-question evaluation dataset.
