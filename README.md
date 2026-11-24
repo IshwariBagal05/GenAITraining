@@ -136,7 +136,7 @@ Tested locally using Groq (`openai/gpt-oss-120b`) with the same question submitt
 
 - **Latency and token logging:** Records request latency, input tokens, output tokens and total tokens.
 - **Response caching:** LRU cache with a maximum capacity of 128 entries.
-- **Input validation:** Questions must contain 3–2000 characters.
+- **Input validation:** Questions must contain 3ï¿½2000 characters.
 - **Prompt injection protection:** User questions are kept separate from system instructions.
 - **Testing:** 14 automated tests passed; Ruff checks passed.
 
@@ -157,4 +157,8 @@ These latency values come from one local test, not a production load test. The s
 | Cache capacity | 128 entries |
 | Maximum question length | 2000 characters |
 
-Note: Latency results are from a single local test. Semantic search results are based on a 15-question evaluation dataset.
+## Live Demo
+
+- **Live API:** https://genaitraining-4ihx.onrender.com
+- **Health Check:** https://genaitraining-4ihx.onrender.com/health
+- **API Documentation:** https://genaitraining-4ihx.onrender.com/docs
